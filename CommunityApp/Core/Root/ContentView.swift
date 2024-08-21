@@ -20,5 +20,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    let testModel = AuthViewModel()
+    testModel.currentUser = User(id: "123", fullname: "Cameron Burhans", email: "cameron@example.com")
+    return ContentView()
+        .environmentObject(testModel)
 }

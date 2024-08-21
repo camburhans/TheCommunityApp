@@ -71,5 +71,8 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    let testModel = AuthViewModel()
+    testModel.currentUser = User(id: "123", fullname: "Cameron Burhans", email: "cameron@example.com")
+    return ProfileView()
+        .environmentObject(testModel)
 }
