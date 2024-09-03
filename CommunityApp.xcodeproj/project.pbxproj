@@ -652,7 +652,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CommunityApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = CommunityApp/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2WN9464H5T;
 				ENABLE_APP_SANDBOX = NO;
@@ -698,7 +698,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CommunityApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = CommunityApp/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2WN9464H5T;
 				ENABLE_APP_SANDBOX = NO;
