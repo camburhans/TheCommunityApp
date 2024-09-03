@@ -8,11 +8,14 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                ProfileView()
+                // Show TabView if user is signed in
+                MainTabView()
             } else {
+                // Show LoginView if user is not signed in
                 LoginView()
             }
         }
