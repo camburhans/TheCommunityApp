@@ -10,6 +10,10 @@
 		A8097B282C53830D00BAF805 /* CommunityAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8097B272C53830D00BAF805 /* CommunityAppApp.swift */; };
 		A8097B2A2C53830D00BAF805 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8097B292C53830D00BAF805 /* ContentView.swift */; };
 		A8097B2F2C53831000BAF805 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8097B2E2C53831000BAF805 /* Preview Assets.xcassets */; };
+		A879A12A2C9F578100944341 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1292C9F578100944341 /* FirebaseManager.swift */; };
+		A879A12E2C9F61A800944341 /* postData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A12D2C9F61A800944341 /* postData.swift */; };
+		A879A1322C9F663800944341 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1312C9F663800944341 /* CreatePostView.swift */; };
+		A879A1342C9F669D00944341 /* FirebaseStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */; };
 		A88415252C54990C00CF430D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415242C54990C00CF430D /* LoginView.swift */; };
 		A88415272C549C2D00CF430D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415262C549C2D00CF430D /* InputView.swift */; };
 		A88415292C54A7AC00CF430D /* RegistrationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415282C54A7AC00CF430D /* RegistrationVIew.swift */; };
@@ -55,6 +59,10 @@
 		A8097B272C53830D00BAF805 /* CommunityAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAppApp.swift; sourceTree = "<group>"; };
 		A8097B292C53830D00BAF805 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8097B2E2C53831000BAF805 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A879A1292C9F578100944341 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A879A12D2C9F61A800944341 /* postData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postData.swift; sourceTree = "<group>"; };
+		A879A1312C9F663800944341 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreManager.swift; sourceTree = "<group>"; };
 		A88415242C54990C00CF430D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A88415262C549C2D00CF430D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A88415282C54A7AC00CF430D /* RegistrationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVIew.swift; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 		A8097B262C53830D00BAF805 /* CommunityApp */ = {
 			isa = PBXGroup;
 			children = (
+				A879A1282C9F576300944341 /* Firebase */,
 				A8C43D4C2C869D2800AD973B /* Info.plist */,
 				A88415182C54954C00CF430D /* App */,
 				A884151A2C54957900CF430D /* Components */,
@@ -144,6 +153,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A879A1282C9F576300944341 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A879A1292C9F578100944341 /* FirebaseManager.swift */,
+				A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		A88415182C54954C00CF430D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +177,7 @@
 				A88415262C549C2D00CF430D /* InputView.swift */,
 				A884152C2C54AE7F00CF430D /* SettingsRowView.swift */,
 				A8C43D3F2C865E1F00AD973B /* PostListView.swift */,
+				A879A1312C9F663800944341 /* CreatePostView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -179,6 +198,7 @@
 			children = (
 				A884152E2C54B14F00CF430D /* User.swift */,
 				A8C43D332C85772F00AD973B /* FetchJSON.swift */,
+				A879A12D2C9F61A800944341 /* postData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,11 +493,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A879A1322C9F663800944341 /* CreatePostView.swift in Sources */,
 				A8097B2A2C53830D00BAF805 /* ContentView.swift in Sources */,
 				A88415252C54990C00CF430D /* LoginView.swift in Sources */,
 				A884152B2C54AAF600CF430D /* ProfileView.swift in Sources */,
 				A8B3BED92C83C1790097ED3F /* SocialView.swift in Sources */,
 				A88415292C54A7AC00CF430D /* RegistrationVIew.swift in Sources */,
+				A879A12E2C9F61A800944341 /* postData.swift in Sources */,
 				A8C43D402C865E1F00AD973B /* PostListView.swift in Sources */,
 				A8097B282C53830D00BAF805 /* CommunityAppApp.swift in Sources */,
 				A884152D2C54AE7F00CF430D /* SettingsRowView.swift in Sources */,
@@ -485,7 +507,9 @@
 				A88415272C549C2D00CF430D /* InputView.swift in Sources */,
 				A884153E2C54B8E700CF430D /* AuthViewModel.swift in Sources */,
 				A8C43D472C865F1300AD973B /* PostCardBody.swift in Sources */,
+				A879A12A2C9F578100944341 /* FirebaseManager.swift in Sources */,
 				A8C43D452C865F0500AD973B /* PostCardHeader.swift in Sources */,
+				A879A1342C9F669D00944341 /* FirebaseStoreManager.swift in Sources */,
 				A8C43D342C85772F00AD973B /* FetchJSON.swift in Sources */,
 				A8C43D4B2C865F5E00AD973B /* Extensions.swift in Sources */,
 				A8B3BED62C83C11A0097ED3F /* MainTabView.swift in Sources */,

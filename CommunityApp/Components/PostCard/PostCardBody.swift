@@ -17,40 +17,34 @@ struct PostCardBody: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .roundedCorner(20, corners: [.bottomLeft, .topRight, .bottomRight])
-            
-            HStack {
-                HStack(spacing: 3) {
-                    Image(systemName: "heart")
-                    Text("\(like_count.formattedString())")
-                }
-                Spacer()
-                HStack {
-                    Image(systemName: "text.bubble")
-                    Text("\(comment_count.formattedString())")
-                }
-                Spacer()
-                HStack {
-                    Image(systemName: "eye")
-                    Text("\(view_count.formattedString())")
-                }
-                Spacer()
-                HStack {
-                    Image(systemName: "bookmark")
-                }
-            }
-            .font(.callout)
             
             Text(description)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .font(.callout)
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
+            
+            if !image.isEmpty {
+                Image(image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .roundedCorner(10, corners: [.bottomLeft, .topRight, .bottomRight])
+            }
+            
+            HStack(spacing: 20) {
+                HStack(spacing: 3) {
+                    Image(systemName: "heart")
+                    Text("\(like_count.formattedString())")
+                }
+                HStack(spacing: 3) {
+                    Image(systemName: "text.bubble")
+                    Text("\(comment_count.formattedString())")
+                }
+                Spacer()
+            }
+            .font(.callout)
         }
-        .padding(.leading, 55)
+        .padding(.leading, 48)
     }
 }
 
