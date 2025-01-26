@@ -62,7 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E7AC67E3624D26C9A8D2D53 /* Pods_CommunityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommunityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E335F840E76EB226BA7FD9E /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		A1D82AB2B2CC60444ED08C58 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		A8097B272C53830D00BAF805 /* CommunityAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAppApp.swift; sourceTree = "<group>"; };
@@ -130,14 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F4516E7B6F33E746F88EF5B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2E7AC67E3624D26C9A8D2D53 /* Pods_CommunityApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8862871CBC7C07B075FEAD9B /* AmplifyConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +145,6 @@
 				A884153F2C54BD9200CF430D /* CommunityApp.app */,
 				A88415402C54BD9200CF430D /* CommunityAppTests.xctest */,
 				A88415412C54BD9200CF430D /* CommunityAppUITests.xctest */,
-				7F4516E7B6F33E746F88EF5B /* Frameworks */,
 				8862871CBC7C07B075FEAD9B /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
@@ -303,11 +293,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8097B482C53831000BAF805 /* Build configuration list for PBXNativeTarget "CommunityApp" */;
 			buildPhases = (
-				A2118F843EA713DA4EAA790F /* [CP] Check Pods Manifest.lock */,
 				A8097B202C53830D00BAF805 /* Sources */,
 				A8097B212C53830D00BAF805 /* Frameworks */,
 				A8097B222C53830D00BAF805 /* Resources */,
-				9351E9B9C5A3BA72BDD04106 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -440,52 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9351E9B9C5A3BA72BDD04106 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A2118F843EA713DA4EAA790F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CommunityApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A8097B202C53830D00BAF805 /* Sources */ = {
