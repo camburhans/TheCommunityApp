@@ -1,3 +1,11 @@
+//
+//  CreatePostView 2.swift
+//  CommunityApp
+//
+//  Created by Cameron Burhans on 1/25/25.
+//
+
+
 import SwiftUI
 
 struct CreatePostView: View {
@@ -85,29 +93,21 @@ struct CreatePostView: View {
         successMessage = nil
         
         // Upload image
-        FirebaseStorageManager().uploadImage(image) { result in
+        AWSManager.shared.uploadImage(image: image) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let imageURL):
                     // Create post
-                    let newPost = postData(
-                        imageURL: imageURL,
-                        like_count: 0,
-                        comment_count: 0,
-                        view_count: 0,
-                        description: description,
-                        profile_img: "default",
-                        profile_name: "User",
-                        profile_id: "user_id"
-                    )
-                    FirebaseManager.shared.createPost(post: newPost) { error in
+                    let newPost = Post(id: UUID().uuidString, description: description, imageURL: imageURL)
+                    AWSManager.shared.createPost(post: newPost) { result in
                         isLoading = false
-                        if let error = error {
-                            errorMessage = "Error creating post: \(error.localizedDescription)"
-                        } else {
+                        switch result {
+                        case .success(_):
                             successMessage = "Post created successfully!"
                             description = ""
                             selectedImage = nil
+                        case .failure(let error):
+                            errorMessage = "Error creating post: \(error.localizedDescription)"
                         }
                     }
                 case .failure(let error):
@@ -119,51 +119,9 @@ struct CreatePostView: View {
     }
 }
 
-
-
-// ImagePicker Component
-struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        let parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-
-        func imagePickerController(
-            _ picker: UIImagePickerController,
-            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
-        ) {
-            if let uiImage = info[.editedImage] as? UIImage {
-                parent.image = uiImage
-            } else if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-            }
-            picker.dismiss(animated: true)
-        }
-
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true)
-        }
-    }
-}
-
-#Preview {
-    CreatePostView()
+// Replace `postData` with `Post` struct suitable for Amplify DataStore
+struct Post: Identifiable, Codable {
+    let id: String
+    let description: String
+    let imageURL: String
 }

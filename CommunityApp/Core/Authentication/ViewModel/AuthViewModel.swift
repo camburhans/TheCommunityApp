@@ -1,13 +1,6 @@
-//
-//  AuthViewModel.swift
-//  CommunityApp
-//
-//  Created by Cameron Burhans on 7/27/24.
-//
-
 import Foundation
-import Firebase
-import FirebaseFirestoreSwift
+import Amplify
+import AWSAuthPlugin
 
 protocol AuthenticationFormProtocol {
     var formIsValid: Bool {get}
@@ -15,22 +8,32 @@ protocol AuthenticationFormProtocol {
 
 @MainActor
 class AuthViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User?
+    @Published var userSession: AuthUser?
     @Published var currentUser: User?
-    
+
     init() {
-        self.userSession = Auth.auth().currentUser
-        
         Task {
+            await loadCurrentAuthUser()
+        }
+    }
+    
+    func loadCurrentAuthUser() async {
+        do {
+            let currentUser = try await Amplify.Auth.getCurrentUser()
+            self.userSession = currentUser
             await fetchUser()
+        } catch {
+            print("DEBUG: No user is signed in")
+            self.userSession = nil
         }
     }
     
     func signIn(withEmail email: String, password: String) async throws {
         do {
-            let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.userSession = result.user
-            await fetchUser()
+            let signInResult = try await Amplify.Auth.signIn(username: email, password: password)
+            if signInResult.isSignedIn {
+                await loadCurrentAuthUser()
+            }
         } catch {
             print("DEBUG: Sign in failed with error: \(error.localizedDescription)")
         }
@@ -38,34 +41,49 @@ class AuthViewModel: ObservableObject {
     
     func createUser(withEmail email: String, password: String, fullname: String) async throws {
         do {
-            let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.userSession = result.user
-            let user = User(id: result.user.uid, fullname: fullname, email: email)
-            let encodedUser = try Firestore.Encoder().encode(user)
-            try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
-            await fetchUser()
+            let signUpResult = try await Amplify.Auth.signUp(username: email, password: password, options: .init(userAttributes: [AuthUserAttribute(.email, value: email)]))
+            if signUpResult.isSignUpComplete {
+                try await signIn(withEmail: email, password: password)
+                let user = User(id: userSession?.userId ?? "", fullname: fullname, email: email)
+                try await Amplify.DataStore.save(user)
+                await loadCurrentAuthUser()
+            }
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
         }
     }
     
     func signOut() {
-        do {
-            try Auth.auth().signOut() // Signs out user on backend
-            self.userSession = nil // wipes out user session and takes back to login screen
-            self.currentUser = nil // wipes out current user data model
-        } catch {
-            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        Task {
+            do {
+                try await Amplify.Auth.signOut()
+                self.userSession = nil
+                self.currentUser = nil
+            } catch {
+                print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+            }
         }
     }
     
     func deleteAccount() {
-        
+        // Implement account deletion logic if needed
     }
     
     func fetchUser() async {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return}
-        self.currentUser = try? snapshot.data(as: User.self)
+        guard let userId = userSession?.userId else { return }
+        do {
+            if let user = try await Amplify.DataStore.query(User.self, byId: userId) {
+                self.currentUser = user
+            }
+        } catch {
+            print("DEBUG: Failed to fetch user with error \(error.localizedDescription)")
+        }
     }
+}
+
+// Define the User struct to match your existing model, ensuring it's Codable and conforms to Identifiable for DataStore
+struct User: Identifiable, Codable {
+    let id: String
+    let fullname: String
+    let email: String
 }

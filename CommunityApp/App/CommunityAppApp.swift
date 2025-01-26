@@ -1,13 +1,9 @@
 import SwiftUI
-import Firebase
 
 @main
 struct TheCommunityAppApp: App {
-   @StateObject var viewModel = AuthViewModel()
-    
-    init() {
-        FirebaseApp.configure()
-    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate // Add this line
+    @StateObject var viewModel = AuthViewModel()
     
     var body: some Scene {
         WindowGroup {

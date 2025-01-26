@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B10E44C66F8CA59068095F0 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D82AB2B2CC60444ED08C58 /* amplifyconfiguration.json */; };
 		A8097B282C53830D00BAF805 /* CommunityAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8097B272C53830D00BAF805 /* CommunityAppApp.swift */; };
 		A8097B2A2C53830D00BAF805 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8097B292C53830D00BAF805 /* ContentView.swift */; };
 		A8097B2F2C53831000BAF805 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8097B2E2C53831000BAF805 /* Preview Assets.xcassets */; };
+		A856A1792D45B7F400D6DE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A856A1782D45B7F400D6DE05 /* AppDelegate.swift */; };
+		A856A17C2D45C49400D6DE05 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A856A17B2D45C49400D6DE05 /* CreatePostView.swift */; };
 		A879A12A2C9F578100944341 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1292C9F578100944341 /* FirebaseManager.swift */; };
 		A879A12E2C9F61A800944341 /* postData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A12D2C9F61A800944341 /* postData.swift */; };
-		A879A1322C9F663800944341 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1312C9F663800944341 /* CreatePostView.swift */; };
-		A879A1342C9F669D00944341 /* FirebaseStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */; };
 		A88415252C54990C00CF430D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415242C54990C00CF430D /* LoginView.swift */; };
 		A88415272C549C2D00CF430D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415262C549C2D00CF430D /* InputView.swift */; };
 		A88415292C54A7AC00CF430D /* RegistrationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88415282C54A7AC00CF430D /* RegistrationVIew.swift */; };
@@ -36,6 +37,11 @@
 		A8C43D452C865F0500AD973B /* PostCardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C43D442C865F0500AD973B /* PostCardHeader.swift */; };
 		A8C43D472C865F1300AD973B /* PostCardBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C43D462C865F1300AD973B /* PostCardBody.swift */; };
 		A8C43D4B2C865F5E00AD973B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C43D4A2C865F5E00AD973B /* Extensions.swift */; };
+		A8FF21602D45DB6600527A36 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = A8FF215F2D45DB6600527A36 /* AWSCognitoAuthPlugin */; };
+		A8FF21622D45DB6600527A36 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = A8FF21612D45DB6600527A36 /* AWSDataStorePlugin */; };
+		A8FF21642D45DB6600527A36 /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = A8FF21632D45DB6600527A36 /* AWSS3StoragePlugin */; };
+		A8FF21662D45DB6600527A36 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = A8FF21652D45DB6600527A36 /* Amplify */; };
+		B6EC7E477CBEB499CC3C1CFD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E335F840E76EB226BA7FD9E /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +62,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E7AC67E3624D26C9A8D2D53 /* Pods_CommunityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommunityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E335F840E76EB226BA7FD9E /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		A1D82AB2B2CC60444ED08C58 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		A8097B272C53830D00BAF805 /* CommunityAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAppApp.swift; sourceTree = "<group>"; };
 		A8097B292C53830D00BAF805 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8097B2E2C53831000BAF805 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A856A1782D45B7F400D6DE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A856A17B2D45C49400D6DE05 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		A879A1292C9F578100944341 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A879A12D2C9F61A800944341 /* postData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postData.swift; sourceTree = "<group>"; };
-		A879A1312C9F663800944341 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
-		A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreManager.swift; sourceTree = "<group>"; };
 		A88415242C54990C00CF430D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A88415262C549C2D00CF430D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A88415282C54A7AC00CF430D /* RegistrationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVIew.swift; sourceTree = "<group>"; };
@@ -93,10 +102,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A88415342C54B78F00CF430D /* FirebaseAuth in Frameworks */,
+				A8FF21662D45DB6600527A36 /* Amplify in Frameworks */,
 				A88415362C54B78F00CF430D /* FirebaseFirestore in Frameworks */,
+				A8FF21602D45DB6600527A36 /* AWSCognitoAuthPlugin in Frameworks */,
+				A8FF21622D45DB6600527A36 /* AWSDataStorePlugin in Frameworks */,
 				A884153A2C54B78F00CF430D /* FirebaseStorage in Frameworks */,
 				A88415432C54C11800CF430D /* FirebaseAnalytics in Frameworks */,
 				A88415382C54B78F00CF430D /* FirebaseFirestoreSwift in Frameworks */,
+				A8FF21642D45DB6600527A36 /* AWSS3StoragePlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F4516E7B6F33E746F88EF5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E7AC67E3624D26C9A8D2D53 /* Pods_CommunityApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8862871CBC7C07B075FEAD9B /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				5E335F840E76EB226BA7FD9E /* awsconfiguration.json */,
+				A1D82AB2B2CC60444ED08C58 /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
 		A8097B1B2C53830D00BAF805 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +154,8 @@
 				A884153F2C54BD9200CF430D /* CommunityApp.app */,
 				A88415402C54BD9200CF430D /* CommunityAppTests.xctest */,
 				A88415412C54BD9200CF430D /* CommunityAppUITests.xctest */,
+				7F4516E7B6F33E746F88EF5B /* Frameworks */,
+				8862871CBC7C07B075FEAD9B /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				A879A1292C9F578100944341 /* FirebaseManager.swift */,
-				A879A1332C9F669D00944341 /* FirebaseStoreManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -166,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A8097B272C53830D00BAF805 /* CommunityAppApp.swift */,
+				A856A1782D45B7F400D6DE05 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -177,7 +209,7 @@
 				A88415262C549C2D00CF430D /* InputView.swift */,
 				A884152C2C54AE7F00CF430D /* SettingsRowView.swift */,
 				A8C43D3F2C865E1F00AD973B /* PostListView.swift */,
-				A879A1312C9F663800944341 /* CreatePostView.swift */,
+				A856A17B2D45C49400D6DE05 /* CreatePostView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,10 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8097B482C53831000BAF805 /* Build configuration list for PBXNativeTarget "CommunityApp" */;
 			buildPhases = (
-				216E5D93761E110308A09E2D /* [CP] Check Pods Manifest.lock */,
+				A2118F843EA713DA4EAA790F /* [CP] Check Pods Manifest.lock */,
 				A8097B202C53830D00BAF805 /* Sources */,
 				A8097B212C53830D00BAF805 /* Frameworks */,
 				A8097B222C53830D00BAF805 /* Resources */,
+				9351E9B9C5A3BA72BDD04106 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +320,10 @@
 				A88415372C54B78F00CF430D /* FirebaseFirestoreSwift */,
 				A88415392C54B78F00CF430D /* FirebaseStorage */,
 				A88415422C54C11800CF430D /* FirebaseAnalytics */,
+				A8FF215F2D45DB6600527A36 /* AWSCognitoAuthPlugin */,
+				A8FF21612D45DB6600527A36 /* AWSDataStorePlugin */,
+				A8FF21632D45DB6600527A36 /* AWSS3StoragePlugin */,
+				A8FF21652D45DB6600527A36 /* Amplify */,
 			);
 			productName = CommunityApp;
 			productReference = A884153F2C54BD9200CF430D /* CommunityApp.app */;
@@ -296,7 +333,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8097B4B2C53831000BAF805 /* Build configuration list for PBXNativeTarget "CommunityAppTests" */;
 			buildPhases = (
-				A58EA3D8F59DF3612BE00441 /* [CP] Check Pods Manifest.lock */,
 				A8097B302C53831000BAF805 /* Sources */,
 				A8097B312C53831000BAF805 /* Frameworks */,
 				A8097B322C53831000BAF805 /* Resources */,
@@ -315,11 +351,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8097B4E2C53831000BAF805 /* Build configuration list for PBXNativeTarget "CommunityAppUITests" */;
 			buildPhases = (
-				FC2FC94D16E7EACA37C4F2C0 /* [CP] Check Pods Manifest.lock */,
 				A8097B3A2C53831000BAF805 /* Sources */,
 				A8097B3B2C53831000BAF805 /* Frameworks */,
 				A8097B3C2C53831000BAF805 /* Resources */,
-				54D9E9350951D79A23BCDEB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +399,7 @@
 			mainGroup = A8097B1B2C53830D00BAF805;
 			packageReferences = (
 				A88415322C54B78F00CF430D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */,
 			);
 			productRefGroup = A8097B1B2C53830D00BAF805;
 			projectDirPath = "";
@@ -385,6 +420,8 @@
 				A8097B2F2C53831000BAF805 /* Preview Assets.xcassets in Resources */,
 				A88415312C54B68D00CF430D /* GoogleService-Info.plist in Resources */,
 				A8C43D322C85751E00AD973B /* posts.json in Resources */,
+				B6EC7E477CBEB499CC3C1CFD /* awsconfiguration.json in Resources */,
+				4B10E44C66F8CA59068095F0 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,44 +442,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		216E5D93761E110308A09E2D /* [CP] Check Pods Manifest.lock */ = {
+		9351E9B9C5A3BA72BDD04106 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellScript = "
-";
-			showEnvVarsInLog = 0;
-		};
-		54D9E9350951D79A23BCDEB6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp-CommunityAppUITests/Pods-CommunityApp-CommunityAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp-CommunityAppUITests/Pods-CommunityApp-CommunityAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityApp-CommunityAppUITests/Pods-CommunityApp-CommunityAppUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityApp/Pods-CommunityApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A58EA3D8F59DF3612BE00441 /* [CP] Check Pods Manifest.lock */ = {
+		A2118F843EA713DA4EAA790F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,29 +478,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CommunityAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC2FC94D16E7EACA37C4F2C0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CommunityApp-CommunityAppUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CommunityApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,7 +492,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A879A1322C9F663800944341 /* CreatePostView.swift in Sources */,
+				A856A1792D45B7F400D6DE05 /* AppDelegate.swift in Sources */,
+				A856A17C2D45C49400D6DE05 /* CreatePostView.swift in Sources */,
 				A8097B2A2C53830D00BAF805 /* ContentView.swift in Sources */,
 				A88415252C54990C00CF430D /* LoginView.swift in Sources */,
 				A884152B2C54AAF600CF430D /* ProfileView.swift in Sources */,
@@ -509,7 +509,6 @@
 				A8C43D472C865F1300AD973B /* PostCardBody.swift in Sources */,
 				A879A12A2C9F578100944341 /* FirebaseManager.swift in Sources */,
 				A8C43D452C865F0500AD973B /* PostCardHeader.swift in Sources */,
-				A879A1342C9F669D00944341 /* FirebaseStoreManager.swift in Sources */,
 				A8C43D342C85772F00AD973B /* FetchJSON.swift in Sources */,
 				A8C43D4B2C865F5E00AD973B /* Extensions.swift in Sources */,
 				A8B3BED62C83C11A0097ED3F /* MainTabView.swift in Sources */,
@@ -890,6 +889,14 @@
 				minimumVersion = 10.29.0;
 			};
 		};
+		A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.45.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -917,6 +924,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A88415322C54B78F00CF430D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		A8FF215F2D45DB6600527A36 /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		A8FF21612D45DB6600527A36 /* AWSDataStorePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSDataStorePlugin;
+		};
+		A8FF21632D45DB6600527A36 /* AWSS3StoragePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSS3StoragePlugin;
+		};
+		A8FF21652D45DB6600527A36 /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8FF215E2D45DB6600527A36 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = Amplify;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

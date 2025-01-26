@@ -6,44 +6,39 @@
 //
 
 import Foundation
-import Firebase
-import FirebaseFirestore
-import FirebaseStorage
+import Amplify
+import AWSS3StoragePlugin
+import AWSDataStorePlugin
 
-class FirebaseManager {
-    static let shared = FirebaseManager()
-    private let db = Firestore.firestore()
-    private let storage = Storage.storage()
-
-    // Upload post data to Firestore
-    func createPost(post: postData, completion: @escaping (Error?) -> Void) {
-        let postRef = db.collection("posts").document() // Creates a unique document in "posts" collection
-        do {
-            try postRef.setData(from: post) { error in
-                completion(error)
+class AWSManager {
+    static let shared = AWSManager()
+    
+    // Create a new post
+    func createPost(post: Post, completion: @escaping (Result<Post, Error>) -> Void) {
+        Amplify.DataStore.save(post) { result in
+            switch result {
+            case .success(let savedPost):
+                completion(.success(savedPost))
+            case .failure(let error):
+                completion(.failure(error))
             }
-        } catch let error {
-            completion(error)
         }
     }
 
-    // Upload image to Firebase Storage and get the URL
+    // Upload image to S3 and get the URL
     func uploadImage(image: UIImage, completion: @escaping (Result<String, Error>) -> Void) {
-        let imageName = UUID().uuidString
-        let storageRef = storage.reference().child("images/\(imageName).jpg")
-        if let imageData = image.jpegData(compressionQuality: 0.8) {
-            storageRef.putData(imageData, metadata: nil) { metadata, error in
-                if let error = error {
-                    completion(.failure(error))
-                } else {
-                    storageRef.downloadURL { url, error in
-                        if let error = error {
-                            completion(.failure(error))
-                        } else if let url = url {
-                            completion(.success(url.absoluteString))
-                        }
-                    }
-                }
+        let imageKey = UUID().uuidString + ".jpg"
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            completion(.failure(NSError(domain: "ImageError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to convert UIImage to JPEG data."])))
+            return
+        }
+        
+        Amplify.Storage.uploadData(key: imageKey, data: imageData) { result in
+            switch result {
+            case .success(let key):
+                completion(.success(key))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
